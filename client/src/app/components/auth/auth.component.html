@@ -1,0 +1,7 @@
+<div id="container">
+    <p *ngIf="errorMessage">{{errorMessage}}</p>
+    <input type="email" placeholder="Ingresa tu correo" required [(ngModel)]="email">
+    <input type="password" placeholder="Contraseña" required [(ngModel)]="password">
+    <button type="button" (click)="login()" *ngIf="!newUser">Entrar</button>
+    <button type="button" (click)="register()" *ngIf="newUser">Registrar</button>
+</div>
