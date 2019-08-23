@@ -47,3 +47,7 @@ Tanto el código del front como del back se encuentran en este mismo repositorio
 ## Deploy
 
 El código se puede ejecutar utilizando `node >= 10` simplemente instalando las dependencias con `npm ci` y luego ejecutando el servidor mediante `node .`
+
+## Tests
+
+La aplicación no cuenta con tests.
