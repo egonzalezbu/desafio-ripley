@@ -1,0 +1,47 @@
+<div class="header">
+    <span class="home"><i class="material-icons" routerLink="/">home</i></span>
+    <p class="user">
+        <span class="user" *ngIf="authService.user">{{authService.user.email}}</span>
+        <button class="logout" type="button" (click)="logout()">Salir</button>
+    </p>
+</div>
+
+<div class="main" *ngIf="product">
+    <div class="flex pictures">
+        <div class="flex" *ngFor="let image of product.images" (click)="setImage(image)">
+            <img class="product-image" [src]="image" [ngClass]="{'selected': isImageSelected(image)}">
+        </div>
+    </div>
+    <div class="flex image">
+        <img class="product-image" [src]="selectedImage">
+    </div>
+    <div class="flex description">
+        <p class="product-name">{{product.name}}</p>
+        <p class="product-sku">SKU: {{product.partNumber}}</p>
+        <p>{{product.shortDescription}}</p>
+        <table>
+            <tbody>
+                <tr *ngIf="product.prices.formattedListPrice">
+                    <td class="normal">Normal</td>
+                    <td class="right normal">{{product.prices.formattedListPrice}}</td>
+                </tr>
+                <tr *ngIf="product.prices.formattedOfferPrice">
+                    <td class="internet">Internet</td>
+                    <td class="right internet">{{product.prices.formattedOfferPrice}}</td>
+                </tr>
+                <tr *ngIf="product.prices.formattedCardPrice">
+                    <td class="tarjeta">Tarjeta Ripley</td>
+                    <td class="right tarjeta">{{product.prices.formattedCardPrice}}</td>
+                </tr>
+                <tr *ngIf="product.prices.discountPercentage">
+                    <td class="descuento">Descuento</td>
+                    <td class="right descuento">-{{product.prices.discountPercentage}}%</td>
+                </tr>
+                <tr *ngIf="product.prices.ripleyPuntos">
+                    <td class="puntos">Acumulas</td>
+                    <td class="right puntos">{{product.prices.ripleyPuntos}} Ripley Puntos GO</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,1 +1,22 @@
-<button type="button" (click)="logout()">Salir</button>
+<div class="header">
+    <span class="user" *ngIf="authService.user">{{authService.user.email}}</span>
+    <button class="logout" type="button" (click)="logout()">Salir</button>
+</div>
+
+<div class="loading" *ngIf="loading">
+    <i class="material-icons">
+        flip_camera_android
+    </i>
+    <br>
+    Cargando Productos...
+</div>
+
+<div class="catalog" *ngIf="!loading">
+    <div class="product" *ngFor="let product of products" [routerLink]="getRouterLink(product)">
+        <img class="product-image" [src]="product.thumbnailImage">
+        <p class="description">{{product.name}}</p>
+        <p class="list-price">{{product.prices.formattedListPrice}}</p>
+        <p class="price">{{product.prices.formattedOfferPrice}}</p>
+        <p class="card-price" *ngIf="product.prices.formattedCardPrice">{{product.prices.formattedCardPrice}} <i class="material-icons">credit_card</i></p>
+    </div>
+</div>

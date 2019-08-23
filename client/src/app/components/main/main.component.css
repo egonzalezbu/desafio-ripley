@@ -1,0 +1,87 @@
+.header {
+    background: #1a1a1a;
+    height: 70px;
+    text-align: right;
+    line-height: 70px;
+}
+
+span.user {
+    color: #fff;
+}
+
+button.logout  {
+    text-decoration:none;
+    border:none;
+    font-weight:400;
+    padding:5px 10px;
+    text-align:center;
+    cursor:pointer;
+    width: 100px;
+    border-radius:2px;
+    margin: 10px;
+    color:#fff;
+    background:#70578b;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    display: inline-block;
+    flex-grow: 1;
+    width: 22vw;
+    height: 300px;
+    text-align: left;
+    border: none;
+    border-radius: 2px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+p {
+    margin: 2px;
+    color: #6a6a6a;
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+}
+
+p.description {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p.list-price {
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+p.price {
+    font-weight: bold;
+}
+
+p.card-price {
+    font-weight: bold;
+    font-size: 18px;
+    color: #e75353;
+}
+
+.product-image {
+    object-fit: scale-down;
+    width: 100%;
+}
+
+.loading {
+    text-align: center;
+    font-size: 40px;
+}
+
+.loading>i {
+    font-size: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }

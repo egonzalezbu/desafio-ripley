@@ -1,0 +1,146 @@
+.header {
+    background: #1a1a1a;
+    height: 70px;
+}
+
+.home {
+    position: absolute;
+    text-align: center;
+    line-height: 70px;
+    color: #fff;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+p.user {
+    display: block;
+    text-align: right;
+    line-height: 70px;
+}
+
+span.user {
+    color: #fff;
+}
+
+button.logout  {
+    text-decoration:none;
+    border:none;
+    font-weight:400;
+    padding:5px 10px;
+    text-align:center;
+    cursor:pointer;
+    width: 100px;
+    border-radius:2px;
+    margin: 10px;
+    color:#fff;
+    background:#70578b;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.flex {
+    flex-shrink: 1;
+}
+
+.pictures {
+    flex-grow: 1;
+    flex-basis: 6%;
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    flex-grow: 5;
+    flex-basis: 47%;
+}
+
+.product-image {
+    object-fit: scale-down;
+    width: 90%;
+    margin: 10px;
+}
+
+.description {
+    flex-grow: 5;
+    flex-basis: 47%;
+}
+
+.selected {
+    border: solid 2px gray;
+    border-radius: 1px;
+}
+
+.product-name {
+    font-size:20px;
+    margin:0;
+    color:#1a1a1a;
+    font-weight:400;
+    text-align: center;
+}
+
+.product-sku {
+    font-size:80%;
+    color:#999;
+    letter-spacing:2px;
+    font-weight:400;
+    margin-bottom:6px;
+}
+
+table {
+    width: 100%;
+}
+
+td.right {
+    text-align: right;
+}
+
+td.normal {
+    height:28px;
+    line-height:28px;
+    padding-right:5px;
+    color:#999;
+}
+
+td.internet {
+    height:28px;
+    line-height:28px;
+    padding-right:5px;
+    color:#999;
+    font-weight: bold;
+}
+
+td.tarjeta {
+    height:28px;
+    line-height:28px;
+    padding-right:5px;
+    color:#e75353;
+    font-weight:600;
+}
+
+td.descuento {
+    height:28px;
+    line-height:28px;
+    padding-right:5px;
+    color:#999;
+    font-weight: bold;
+}
+
+td.puntos {
+    height:28px;
+    line-height:28px;
+    padding-right:5px;
+    border-bottom:1px solid #e8e8e8;
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-bottom:10px;
+    height:auto;
+    font-weight:400;
+    font-size:16px;
+    color:#70578b;
+}

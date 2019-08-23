@@ -9,13 +9,18 @@ import { RemoteService } from '../../services/remote.service';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private authService: AuthService, private remoteService: RemoteService) { }
+  products: Array<Object>;
+  loading: boolean = true;
+
+  constructor(public authService: AuthService, private remoteService: RemoteService) { }
 
   ngOnInit() {
     this.authService.ready.then(() => {
       if (this.authService.user) {
-        this.remoteService.getProducts().then((products) => {
-          console.log(products);
+        // Get all products
+        this.remoteService.getProducts().then((products: Array<Object>) => {
+          this.products = products;
+          this.loading = false;
         }, (err) => {
           console.log(err);
         });
@@ -25,6 +30,10 @@ export class MainComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+  }
+
+  getRouterLink(product) {
+    return "/product/" + product.partNumber;
   }
 
 }
